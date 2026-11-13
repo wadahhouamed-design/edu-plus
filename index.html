@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDU PLUS</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fc;color:#172b4d}
+header{background:#173d75;color:white;padding:22px 18px;border-radius:0 0 24px 24px}
+.logo{font-size:27px;font-weight:bold}
+header p{color:#dceaff}
+nav{display:flex;justify-content:space-between;align-items:center;gap:8px}
+select{padding:9px;border-radius:9px;border:0}
+.container{padding:18px;max-width:850px;margin:auto}
+.welcome{background:white;padding:22px;border-radius:18px;margin-top:18px}
+h2{color:#173d75}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:white;padding:18px;border-radius:15px;text-align:center;box-shadow:0 3px 12px #0000000c}
+.card span{font-size:30px}
+button{border:0;border-radius:10px;padding:12px;background:#2468bd;color:white;font-size:15px;cursor:pointer}
+.full{width:100%;margin-top:12px}
+.section{margin-top:25px}
+select.level{width:100%;padding:14px;background:white;border:1px solid #ddd;margin:10px 0}
+footer{text-align:center;padding:25px;color:#667}
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<div class="logo">🎓 EDU PLUS</div>
+<select id="lang" onchange="changeLang()">
+<option value="ar">العربية</option>
+<option value="fr">Français</option>
+<option value="en">English</option>
+</select>
+</nav>
+<p id="subtitle">منصتك التعليمية الجزائرية</p>
+</header>
+
+<main class="container">
+<div class="welcome">
+<h2 id="welcome">مرحباً بك في EDU PLUS 👋</h2>
+<p id="description">تعلم، اكتشف، وحقق النجاح مع أفضل الأساتذة.</p>
+</div>
+
+<div class="section">
+<h2 id="choose">اختر فضاءك</h2>
+<div class="grid">
+<div class="card">
+<span>👨‍🎓</span>
+<h3 id="student">فضاء التلميذ</h3>
+<p id="studentDesc">الدروس والتمارين والاختبارات</p>
+<button onclick="alert('فضاء التلميذ قيد التطوير')"
+id="studentBtn">دخول</button>
+</div>
+<div class="card">
+<span>👨‍🏫</span>
+<h3 id="teacher">فضاء الأستاذ</h3>
+<p id="teacherDesc">نشر الدروس والمواضيع</p>
+<button onclick="alert('فضاء الأستاذ قيد التطوير')"
+id="teacherBtn">دخول</button>
+</div>
+</div>
+</div>
+
+<div class="section">
+<h2 id="levelsTitle">المستويات الدراسية</h2>
+<select class="level" id="level">
+<option>التعليم الابتدائي</option>
+<option>التعليم المتوسط</option>
+<option>التعليم الثانوي</option>
+</select>
+</div>
+
+<div class="section">
+<h2 id="services">ماذا ستجد في منصتنا؟</h2>
+<div class="grid">
+<div class="card">📚<p id="lessons">الدروس والملخصات</p></div>
+<div class="card">📝<p id="exams">الفروض والاختبارات</p></div>
+<div class="card">🔔<p id="notifications">الإشعارات</p></div>
+<div class="card">🌍<p id="languages">ثلاث لغات</p></div>
+</div>
+</div>
+</main>
+
+<footer>© 2026 EDU PLUS - Tous droits réservés</footer>
+
+<script>
+const translations={
+ar:{
+subtitle:"منصتك التعليمية الجزائرية",
+welcome:"مرحباً بك في EDU PLUS 👋",
+description:"تعلم، اكتشف، وحقق النجاح مع أفضل الأساتذة.",
+choose:"اختر فضاءك",student:"فضاء التلميذ",
+studentDesc:"الدروس والتمارين والاختبارات",
+teacher:"فضاء الأستاذ",teacherDesc:"نشر الدروس والمواضيع",
+enter:"دخول",levelsTitle:"المستويات الدراسية",
+levels:["التعليم الابتدائي","التعليم المتوسط","التعليم الثانوي"],
+services:"ماذا ستجد في منصتنا؟",
+lessons:"الدروس والملخصات",exams:"الفروض والاختبارات",
+notifications:"الإشعارات",languages:"ثلاث لغات",
+direction:"rtl"
+},
+fr:{
+subtitle:"Votre plateforme éducative algérienne",
+welcome:"Bienvenue sur EDU PLUS 👋",
+description:"Apprenez et réussissez avec les meilleurs enseignants.",
+choose:"Choisissez votre espace",student:"Espace élève",
+studentDesc:"Cours, exercices et examens",
+teacher:"Espace enseignant",teacherDesc:"Publier des cours et sujets",
+enter:"Entrer",levelsTitle:"Niveaux scolaires",
+levels:["Primaire","Collège","Lycée"],
+services:"Que trouverez-vous sur notre plateforme ?",
+lessons:"Cours et résumés",exams:"Devoirs et examens",
+notifications:"Notifications",languages:"Trois langues",
+direction:"ltr"
+},
+en:{
+subtitle:"Your Algerian educational platform",
+welcome:"Welcome to EDU PLUS 👋",
+description:"Learn and succeed with great teachers.",
+choose:"Choose your space",student:"Student Space",
+studentDesc:"Lessons, exercises and exams",
+teacher:"Teacher Space",teacherDesc:"Publish lessons and topics",
+enter:"Enter",levelsTitle:"School levels",
+levels:["Primary School","Middle School","High School"],
+services:"What will you find on our platform?",
+lessons:"Lessons and summaries",exams:"Tests and exams",
+notifications:"Notifications",languages:"Three languages",
+direction:"ltr"
+}
+};
+
+function changeLang(){
+const l=document.getElementById("lang").value;
+const t=translations[l];
+document.documentElement.lang=l;
+document.documentElement.dir=t.direction;
+["subtitle","welcome","description","choose","student",
+"studentDesc","teacher","teacherDesc","levelsTitle",
+"services","lessons","exams","notifications","languages"]
+.forEach(id=>document.getElementById(id).textContent=t[id]);
+document.getElementById("studentBtn").textContent=t.enter;
+document.getElementById("teacherBtn").textContent=t.enter;
+document.getElementById("level").innerHTML=
+t.levels.map(x=>`<option>${x}</option>`).join("");
+}
+</script>
+</body>
+</html>
